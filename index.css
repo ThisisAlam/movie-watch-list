@@ -70,48 +70,135 @@ main{
     flex-direction: column;
     height: 70%;
     border-radius: 10px;
-    .search-section{
-        border-bottom: 2px solid grey;
-        gap: 15px;
-        width: 100%;
-        /* margin: 10px auto; */
-        text-align: center;
-        padding: 15px 0;
-        input{
-            width: 60%;
-            margin: 0 5px 0 0;
-        }
-        button{
-            width: 20%;
-            margin: 0 0 0 5px;
-        }
-        input, button{
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 1rem;  
-        }
+}
+.search-section{
+    border-bottom: 2px solid grey;
+    gap: 15px;
+    width: 100%;
+    text-align: center;
+    padding: 15px 0;
+    input{
+        width: 60%;
+        margin: 0 5px 0 0;
     }
-    .movies-section{
-
-        h2{
-
-        }
-        .movies-grid{
-            overflow-y: scroll;
-        }
+    button{
+        width: 20%;
+        margin: 0 0 0 5px;
     }
+    input, button{
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        font-size: 1rem;  
+    }
+}
+.movies-grid{
+    position: relative;
+    overflow-y: auto;
+    flex-direction: column;
+    padding: 1.5rem 1.5rem;
+    gap: 1.5rem;
+}
+.movies-grid,
+.movie-container{
+    display: flex;
+    align-items: center;
+
+}
+.movie-container{
+    gap: 0.5rem;
+    box-shadow: 0 0 7px grey;
+    border-radius: 10px;
+    /* overflow: hidden; */
+}
+.movie-poster img{
+    width: 100px;
+    height: 150px;
+    display: block;
+}
+.movie-info-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content:start;
+    gap: 10px;
+    height: 160px;
+    border: 2px solid #ccc;
+}
+.movie-title-rating{
+    margin: 5px 0;
+    width: 95%;
+    h3{
+        margin: 0;
+    }
+    p{
+        margin: 0;
+    }
+}
+.movie-info-addBtn{
+    width: 90%;
+    p{
+        font-weight: bold;
+        margin:0;
+    }
+    .add-btn-container{
+        /* text-align: center; */
+    }
+    button{
+        border-radius: 20px;
+        border: none;
+        font-weight: bold;
+        color: white;
+        background-color: rgb(54, 54, 54);
+        width:30px;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+    }
+    button:hover{
+        transform: scale(1.10);
+    }
+    button:active{
+        transform: scale(0.95);
+    }
+    label{
+        font-weight: bold;
+    }
+}
+.movie-description{
+    /* overflow-y: scroll; */
+    width: 95%;
+    p{
+        margin:0;
+    }
+    .description {
+        display: -webkit-box;
+        -webkit-line-clamp: 4; /* number of lines you want */
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+.movie-title-rating,
+.movie-info-addBtn,
+.movie-description{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.75rem;
 }
 
 /*Footer*/
 .footer{
     border-radius: 10px;
     height: 10%;
+    background-color: rgb(60, 53, 82);
+    color: white;
     p{
         padding: 5px;
         text-align: center;
         a{
             text-decoration: none;
-            color: black;
+            color:white;
             font-weight: bold;
         }
     }

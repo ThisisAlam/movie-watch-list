@@ -36,7 +36,6 @@ header{
     border-radius: 10px;
     background-image: url('images/background1-1.png');
     .title{
-        /* width: 65%; */
         h1{
             font-size: 1.5rem;
             text-align: center;
@@ -46,7 +45,6 @@ header{
     }
     .search-movie-btn{
         text-align: center;
-        /* width: 35%; */
         button{
             font-weight: bold;
             padding: 0.5rem 0.75rem;

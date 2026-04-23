@@ -14,6 +14,7 @@ footer {
 body{
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 10px;
     width: 450px;
     height: 600px;
@@ -26,9 +27,9 @@ body{
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
     width: 100%;
-    height: 100%;
+    min-height: 100%;
 }
 
 /*Header*/
@@ -37,7 +38,8 @@ header{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
-    min-height: 20%;
+    min-height: 110px;
+    margin-bottom: 10px;
     width: 100%;
     gap: 10px;
     border-radius: 10px;
@@ -74,7 +76,7 @@ main{
     justify-content: start;
     align-items: center;
     flex-direction: column;
-    height: 80%;
+    min-height: 80%;
     border-radius: 10px;
 }
 .search-section{
@@ -100,9 +102,8 @@ main{
 .movies-grid{
     position: relative;
     overflow-y: auto;
-    margin: 1rem 0;
     flex-direction: column;
-    padding: 0 1.5rem;
+    padding: 1.5rem 1.5rem;
     gap: 1.5rem;
 }
 .movies-grid,
@@ -115,13 +116,13 @@ main{
     gap: 0.5rem;
     box-shadow: 0 0 7px grey;
     border-radius: 10px;
-    width: 380px;
-    height: 200px;
+    width: 390px;
+    height: 160px;
     /* overflow: hidden; */
 }
 .movie-poster img{
     width: 100px;
-    height: 150px;
+    height: auto;
     display: block;
     border-radius: 10px;
 }
@@ -199,7 +200,7 @@ main{
 .footer{
     border-radius: 10px;
     height: 10%;
-    margin-top: 10px;
+    margin-top: auto;
     p{
         padding: 5px;
         text-align: center;

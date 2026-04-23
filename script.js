@@ -1,12 +1,15 @@
 const searchBtn = document.getElementById('searchBtn')
-const moviesDisplay = document.getElementById('movies')
-const emptyState = document.getElementById('emptyState')
 const addMovieBtn = document.getElementById('add-btn')
 const removeMovieBtn = document.getElementById('remove-btn')
+const moviesDisplay = document.getElementById('movies')
+const emptyState = document.getElementById('emptyState')
+
 
 let newDataArray = []
 let moviesArray = []
 let selectedMovies = []
+
+
 async function searchMovies(){
     const query = document.getElementById('searchInput').value
     const response = await fetch(`http://www.omdbapi.com/?s=${query}&apikey=162dd92f`)
@@ -20,8 +23,8 @@ async function searchMovies(){
     console.log(moviesInfo)
     
     if(moviesInfo.length >= 1){
-       moviesArray = await filterMovies(moviesInfo)
-       renderMovies(moviesArray)
+        moviesArray = await filterMovies(moviesInfo)
+        renderMovies(moviesArray)
     } else{
         emptyState.classList.remove('hidden')
         emptyState.innerHTML =`
@@ -51,31 +54,31 @@ function  renderMovies(moviesArray){
     const display = moviesArray.map((movie) =>{
         return `
         <div class="movie-container">
-            <div class="movie-poster">
-                <img src="${movie.Poster}" alt="Movie poster image">
-            </div>
-            <div class="movie-info-container">
-                <div class="movie-title-rating">
-                    <h3 class="movie-title">${movie.Title}</h3>
-                    <p class="movie-rating">⭐ <span>${movie.Rating}</span></p>
-                </div>
-                <div class="movie-info-addBtn">
-                    <p class="movie-length-min">${movie.Runtime}</p>
-                    <p class="movie-genre">${movie.Genre}</p>
-                    <div class="add-btn-container">
-                        <button class="add-btn" data-id="${movie.Id}">+</button>
-                        <span>Watchlist</span>
+        <div class="movie-poster">
+        <img src="${movie.Poster}" alt="Movie poster image">
+        </div>
+        <div class="movie-info-container">
+        <div class="movie-title-rating">
+        <h3 class="movie-title">${movie.Title}</h3>
+        <p class="movie-rating">⭐ <span>${movie.Rating}</span></p>
+        </div>
+        <div class="movie-info-addBtn">
+        <p class="movie-length-min">${movie.Runtime}</p>
+        <p class="movie-genre">${movie.Genre}</p>
+        <div class="add-btn-container">
+        <button class="add-btn" data-id="${movie.Id}">+</button>
+        <span>Watchlist</span>
                     </div>
-                </div>
+                    </div>
                 <div class="movie-description">
                     <p class="description">${movie.Plot}</p>
                 </div>
             </div>
-        </div>`
+            </div>`
     }).join("")
     
     moviesDisplay.innerHTML = display
-    
+        
 }
 
 moviesDisplay.addEventListener("click", function (e) {
@@ -83,15 +86,32 @@ moviesDisplay.addEventListener("click", function (e) {
     if (e.target.classList.contains("add-btn")) {
         const movieId = e.target.dataset.id;
         console.log(movieId);
-        const addMovie = moviesArray.find(movie => movie.Id === movieId)
-        selectedMovies.push(addMovie)
-        console.log(selectedMovies)
-    }
-});
+    const addMovie = moviesArray.find(movie => movie.Id === movieId)
+    selectedMovies.push(addMovie)
+    console.log(selectedMovies)
+    localStorage.setItem("selectedMovies", JSON.stringify(selectedMovies))
+}
+
+function renderSavedMovies(savedMovieArray){
+    
+}
+
+const savedMovieArray = JSON.parse(localStorage.getItem("selectedMovies")) || []
+
 searchBtn.addEventListener('click', searchMovies)
 
-export {selectedMovies}
+const watchlistBtn = document.getElementById('watchlist-btn')
+const searchPageBtn = document.getElementById('search-page-btn')
+const searchPage = document.getElementById('search-page')
+const watchlistPage = document.getElementById('watchlist-page')
 
-
-// addMovieBtn.addEventListener('click', function(){})
-// removeMovieBtn.addEventListener('click', function(){})
+watchlistBtn.addEventListener('click', function(e){
+    e.preventDefault()
+    searchPage.classList.add('hidden')
+    watchlistPage.classList.remove('hidden')
+})
+searchPageBtn.addEventListener('click', function(e){
+    e.preventDefault()
+    watchlistPage.classList.add('hidden')
+    searchPage.classList.remove('hidden')
+})

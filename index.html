@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Watch List</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <section id="search-page" class="search-html">
+            <!-- HEADER -->
+        <header class="header">
+            <div class="title">
+                <h1>🎬 Find Your Favorite Movie</h1>
+                <p>Search movies and build your personal watch list</p>
+            </div>
+            <div class="watchlist-btn">
+                <button id="watchlist-btn">My Watchlist</button>
+            </div>
+        </header>
+        
+        <!-- MAIN CONTENT -->
+        <main class="container">
+            
+            <!-- SEARCH SECTION -->
+            <section class="search-section">
+                <input 
+                    type="text" 
+                    id="searchInput" 
+                    placeholder="Search for a movie..."/>
+                <button id="searchBtn">Search</button>
+            </section>
+            <!-- <hr/> -->
+            
+            <!-- MOVIE RESULTS -->
+            <section id="movies" class="movies-grid">
+                <!-- Movies will be injected here -->
+            </section>
+        
+            <!-- NO MOVIE RESULTS -->
+            <section id="emptyState" class="hidden">
+                <!-- Display a message if no movies found -->
+            </section>
+        </main>
+    </section>
+
+
+    <section id="watchlist-page" class="watchlist-html hidden">
+            <!-- HEADER -->
+        <header class="header">
+            <div class="title">
+                <h1>My Watchlist</h1>
+            </div>
+            <div class="search-movie-btn">
+                <button id="search-page-btn">Search for Movies</button>
+            </div>
+        </header>
+        
+        <!-- MAIN CONTENT -->
+        <main class="container">
+            <!-- WATCH LIST -->
+            <section id="movies" class="movies-grid">
+                <!-- Movies will be injected here -->
+            </section>
+        
+            <!-- NO WATCHLIST RESULTS -->
+            <section id="emptyState" class="hidden">
+                <!-- Display a message if no movies found -->
+            </section>
+            
+        </main>
+    </section>
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <p>&copy; Created by Fakhar Alam | Powered by <a href="https://www.omdbapi.com">OMDb API</a></p>
+    </footer>
+
+    <script src="script.js" type="module"></script>
+</body>
+</html>

@@ -17,14 +17,38 @@ A simple and interactive web app to search movies and build your personal watchl
 
 ## 🎥 Demo (Screen Recording)
 
-Check out the app in action:
-
-```id="screen-recording"
+```bash
 📁 screen-recording/
  ┗ 🎬 screen-recording.mp4
 ```
 
-> You can download and view the demo video from the **screen-recordings folder** in this repository.
+> Download and watch the demo video from the repository.
+
+---
+
+## 📸 Screenshots
+
+### 🔎 Search Screen
+
+![Search Screen](./screenshots/screenshot1.png)
+
+---
+
+### ❌ No Results State
+
+![No Results](./screenshots/screenshot2.png)
+
+---
+
+### 🎬 Search Results
+
+![Search Results](./screenshots/screenshot3.png)
+
+---
+
+### 📌 Watchlist View
+
+![Watchlist](./screenshots/screenshot4.png)
 
 ---
 
@@ -53,11 +77,11 @@ Check out the app in action:
 
 ## 📁 Project Structure
 
-```id="structure"
+```bash
 📦 movie-watch-list
  ┣ 📜 index.html
  ┣ 📜 index.css
- ┣ 📜 index.js
+ ┣ 📜 script.js
  ┣ 📁 images
  ┗ 📁 screen-recordings
 ```
@@ -66,20 +90,17 @@ Check out the app in action:
 
 ## ⚙️ Setup & Usage
 
-1. Clone the repository:
-
-```id="clone"
+```bash
 git clone https://github.com/your-username/movie-watch-list.git
 ```
 
-2. Open `index.html` in your browser
+Open `index.html` in your browser.
 
 ---
 
 ## 🔑 API Used
 
-* OMDb API
-  https://www.omdbapi.com/
+https://www.omdbapi.com/
 
 ---
 
@@ -88,7 +109,7 @@ git clone https://github.com/your-username/movie-watch-list.git
 * ✔ Highlight already added movies
 * 🎬 Movie detail modal
 * ⚡ Optimize API calls with `Promise.all()`
-* 📱 Responsive design for mobile
+* 📱 Responsive design
 
 ---
 
@@ -104,6 +125,6 @@ git clone https://github.com/your-username/movie-watch-list.git
 ## 💡 Note
 
 This project is part of my journey learning **Full Stack Development from Scrimba**.
-Use my Scrimba link to explore the same path.
+Use my Scrimba link to start the same path.
 
 ---
